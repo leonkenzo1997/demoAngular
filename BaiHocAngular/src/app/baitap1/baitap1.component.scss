@@ -1,0 +1,33 @@
+@mixin headerfont($bg) {
+    display: block;
+  background-color: $bg;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@mixin contentfont($width, $bg) {
+  width: $width;
+  background-color: $bg;
+  text-align: center;
+  color: white;
+  padding: 100px;
+}
+.header {
+  @include headerfont(red);
+}
+
+.contents {
+  display: flex;
+  .content {
+    @include contentfont(50%, orange);
+  }
+
+  .sidebar {
+    @include contentfont(50%, green);
+  }
+}
+
+.footer {
+  @include headerfont(blue);
+}
